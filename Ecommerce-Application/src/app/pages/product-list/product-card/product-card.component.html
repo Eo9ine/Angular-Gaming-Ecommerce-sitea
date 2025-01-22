@@ -1,0 +1,14 @@
+<div class="flex flex-wrap justify-around gap-20">
+    @for(product of products(); track product.id)
+    {
+        <div class="w-1/4 p-8 bg-black rounded-xl text-white gap-2 flex flex-col justify-center">
+            <div class="w-[full] flex justify-center">
+                <img src="{{product.image}}" class="object-contain  w-[100px] h-[200px]"/>
+            </div>
+            <h4 class="font-bold text-green-500">{{product.name}}</h4>
+            <p>R {{product.price}}</p>
+            <app-primary-button label="Add to Cart"/>
+        </div>
+    }
+
+</div>
