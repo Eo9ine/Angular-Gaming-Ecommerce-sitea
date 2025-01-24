@@ -1,14 +1,16 @@
-<div class="flex flex-wrap justify-around gap-20">
-    @for(product of products(); track product.id)
-    {
-        <div class="w-1/4 p-8 bg-black rounded-xl text-white gap-2 flex flex-col justify-center">
-            <div class="w-[full] flex justify-center">
-                <img src="{{product.image}}" class="object-contain  w-[100px] h-[200px]"/>
-            </div>
-            <h4 class="font-bold text-green-500">{{product.name}}</h4>
-            <p>R {{product.price}}</p>
-            <app-primary-button label="Add to Cart"/>
-        </div>
-    }
+<div class="flex flex-col  bg-black p-16 gap-3 rounded-xl relative text-white">
+    <span class="flex justify-center w-full"><img class="w-[200px] h-[200px] " [src]="product().image"/></span>
+    <span><p class="text-green-500 font-bold">{{product().name}}</p></span>
+    <span><p>R {{product().price}}</p></span>
+    <app-primary-button (click)="productServie.addToCart(product())" label="Add to Cart"/>
 
+    <span class="absolute top-3 right-5" [class]="product().stock ? 'text-green-500' : 'text-red-500'">
+        @if(product().stock)
+        {
+            <p class="font-bold">{{product().stock}} left</p>
+        }
+        @else {
+            <p class="font-bold">Out of stock</p>
+        }
+    </span>
 </div>
