@@ -1,1 +1,18 @@
-<p>cart works!</p>
+<div class="px-40 py-20 flex flex-col gap-4 ">
+    <span class="text-3xl font-semibold">Shopping Cart</span>
+
+    @for(item of cartService.products(); track item.id)
+    {
+        @if(cartService.products().length < 0)
+        {
+            <span class="text-2xl font-semibold">Your cart is empty</span>
+
+        }
+        @else {
+            <app-cart-card [product]="item"/>
+            
+        }
+    }
+  
+   
+</div>
