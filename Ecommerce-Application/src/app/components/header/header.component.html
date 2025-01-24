@@ -1,5 +1,5 @@
 <div class="flex justify-between items-center px-16 py-4 bg-black text-white ">
-    <span class="text-xl font-normal text-white">Game Store</span>
+    <span class="text-xl font-normal text-white"><button routerLink="/">Game Store</button></span>
 
-    <app-primary-button (sendMessage)="buttonMessage()" [label]="'Cart (' + cartService.products().length + ')'"/>
+    <app-primary-button routerLink="/product" (sendMessage)="buttonMessage()" [label]="'Cart (' + cartService.products().length + ')'"/>
 </div>
