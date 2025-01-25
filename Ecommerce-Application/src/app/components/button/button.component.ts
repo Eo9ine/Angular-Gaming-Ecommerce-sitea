@@ -1,4 +1,5 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
+import { ProductServiceService } from '../../services/product-service.service';
 
 @Component({
   selector: 'app-button',
@@ -9,6 +10,7 @@ import { Component, input, output } from '@angular/core';
 export class ButtonComponent {
    label= input('');
   
+   removeProduct = inject(ProductServiceService);
    
     sendMessage = output();
 }

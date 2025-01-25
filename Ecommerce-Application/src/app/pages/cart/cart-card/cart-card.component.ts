@@ -1,4 +1,4 @@
-import { Component,input } from '@angular/core';
+import { Component,inject,input } from '@angular/core';
 import { ProductModel } from '../../../components/model/productModel.component';
 import { ProductServiceService } from '../../../services/product-service.service';
 import { ButtonComponent } from "../../../components/button/button.component";
@@ -10,8 +10,8 @@ import { ButtonComponent } from "../../../components/button/button.component";
   styleUrl: './cart-card.component.scss'
 })
 export class CartCardComponent {
-
+ productServie = inject(ProductServiceService)
   
-
+  
   product = input.required<ProductModel>();
 }

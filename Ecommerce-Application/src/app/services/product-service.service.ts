@@ -30,6 +30,10 @@ export class ProductServiceService {
     this.products.set([...this.products(),product ]);
   }
 
+  removeFromCart(product: ProductModel)
+  {
+    this.products.set(this.products().filter(p => p.id !== product.id));
+  }
 
 
   constructor() { }
